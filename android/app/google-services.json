@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "811473754464",
+    "project_id": "maternal-mortality",
+    "storage_bucket": "maternal-mortality.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811473754464:android:9d4ba2b5e15fc91cc5e605",
+        "android_client_info": {
+          "package_name": "com.example.maternalmotarlity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811473754464-mn8cdh4dm3ocalgaktnbv4vhutqpr4aa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.maternalmotarlity",
+            "certificate_hash": "641bff44ae8a4a3d8c704c8bb0ab732467eb60c8"
+          }
+        },
+        {
+          "client_id": "811473754464-nn0m7fd0q11pfgo7nqt936qma3u6f775.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx3hsVGw3QCuu15s6nqRp00bRGMwzKwso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "811473754464-nn0m7fd0q11pfgo7nqt936qma3u6f775.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
