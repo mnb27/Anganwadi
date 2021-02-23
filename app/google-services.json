@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "866175911610",
+    "project_id": "maternalmortality1",
+    "storage_bucket": "maternalmortality1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866175911610:android:09bd18ad384c72b545e483",
+        "android_client_info": {
+          "package_name": "com.example.maternalmortality"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866175911610-nenabbls511v5q1bj0gpoqvcemcmsqd2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.maternalmortality",
+            "certificate_hash": "641bff44ae8a4a3d8c704c8bb0ab732467eb60c8"
+          }
+        },
+        {
+          "client_id": "866175911610-cggd73991fun40qtok1ceegsduhg3i0f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABJu4UwPmpavrrJSkrxmxnMykZFxG34ec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866175911610-cggd73991fun40qtok1ceegsduhg3i0f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
