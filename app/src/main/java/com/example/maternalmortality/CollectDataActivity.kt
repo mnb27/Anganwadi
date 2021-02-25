@@ -12,9 +12,20 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class CollectDataActivity : AppCompatActivity() {
+
+    var isBeingUpdated = false
+    var previousDetails: PatientDetails? = null
+    var previousId: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_collect_data)
+
+        if(intent.hasExtra("previous details")){
+            isBeingUpdated = true
+            previousDetails = intent.extras?.get("previous details") as PatientDetails
+            previousId = intent.extras?.get("Id") as String
+        }
 
         val name: EditText = findViewById(R.id.one)
         val date: EditText = findViewById(R.id.two)
@@ -31,6 +42,22 @@ class CollectDataActivity : AppCompatActivity() {
         val anc: EditText = findViewById(R.id.thirteen)
         val heartbeat: EditText = findViewById(R.id.fourteen)
         val bp: EditText = findViewById(R.id.fifteen)
+
+        name.setText(previousDetails?.name)
+        date.setText(previousDetails?.date)
+        age.setText(previousDetails?.age)
+        village.setText(previousDetails?.village)
+        religion.setText(previousDetails?.religion)
+        caste.setText(previousDetails?.caste)
+        phone.setText(previousDetails?.phone)
+        lpara.setText(previousDetails?.lpara)
+        lmp.setText(previousDetails?.lmp)
+        edod.setText(previousDetails?.edod)
+        tetanus1.setText(previousDetails?.tetanus1)
+        tetanus2.setText(previousDetails?.tetanus2)
+        anc.setText(previousDetails?.anc)
+        heartbeat.setText(previousDetails?.heatbeat)
+        bp.setText(previousDetails?.bp)
 
         val saveButton: Button =findViewById(R.id.saveButton)
 
@@ -54,22 +81,83 @@ class CollectDataActivity : AppCompatActivity() {
             var ancText = anc.text.toString()
             var heartbeatText = heartbeat.text.toString()
             var bpText = bp.text.toString()
-            val patientDetails = PatientDetails(nameText,dateText,ageText,villageText,religionText,casteText,phoneText,lparaText,lmpText,edodText,tetanus1Text,tetanus2Text
-            ,ancText,heartbeatText,bpText,auth.currentUser?.uid.toString())
+
+
             val firestore = FirebaseFirestore.getInstance().collection("PatientDetails")
 
-            firestore.document().set(patientDetails)
-                .addOnCompleteListener { task->
-                    if(task.isSuccessful){
-                        Toast.makeText(this, "Successfully Saved",Toast.LENGTH_LONG).show()
-                        val intent = Intent(this,MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    }
-                    else{
-                        Toast.makeText(this,"Error",Toast.LENGTH_LONG).show()
-                    }
+            if(isBeingUpdated){
+                val patientDetails = previousId?.let { it1 ->
+                    PatientDetails(
+                        nameText,
+                        dateText,
+                        ageText,
+                        villageText,
+                        religionText,
+                        casteText,
+                        phoneText,
+                        lparaText,
+                        lmpText,
+                        edodText,
+                        tetanus1Text,
+                        tetanus2Text
+                        ,
+                        ancText,
+                        heartbeatText,
+                        bpText,
+                        auth.currentUser?.uid.toString()
+                        )
+
+
+
                 }
+                if (patientDetails != null) {
+                    firestore.document(previousId!!).set(patientDetails)
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                Toast.makeText(this, "Successfully Updated", Toast.LENGTH_LONG).show()
+                                val intent = Intent(this, MainActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            } else {
+                                Toast.makeText(this, "Error", Toast.LENGTH_LONG).show()
+                            }
+                        }
+                }
+
+            }
+            else {
+
+                val patientDetails = PatientDetails(
+                    nameText,
+                    dateText,
+                    ageText,
+                    villageText,
+                    religionText,
+                    casteText,
+                    phoneText,
+                    lparaText,
+                    lmpText,
+                    edodText,
+                    tetanus1Text,
+                    tetanus2Text
+                    ,
+                    ancText,
+                    heartbeatText,
+                    bpText,
+                    auth.currentUser?.uid.toString()
+                )
+                firestore.document(patientDetails.phone).set(patientDetails)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "Successfully Saved", Toast.LENGTH_LONG).show()
+                            val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(this, "Error", Toast.LENGTH_LONG).show()
+                        }
+                    }
+            }
 
 
         }
