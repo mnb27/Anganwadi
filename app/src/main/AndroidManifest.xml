@@ -8,8 +8,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Maternal_mortality">
-        <activity android:name=".ViewDataIndividualActivity"></activity>
+        android:theme="@style/Theme.MaternalMortality">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/asha_details_item" />
+
+        <activity android:name=".ASHA_request" />
+        <activity android:name=".ANMrequest" />
+        <activity android:name=".NewUserActivity" />
+        <activity android:name=".AdminActivity" />
         <activity android:name=".CollectDataActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

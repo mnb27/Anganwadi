@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/teal_200"
+        android:background="@color/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.041"
         android:text="Collect Data"
@@ -28,7 +28,7 @@
         android:id="@+id/button4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/teal_200"
+        android:background="@color/colorPrimary"
         android:layout_margin="20dp"
         android:text="View Assigned "
         android:padding="5dp"
@@ -41,27 +41,11 @@
         app:layout_constraintVertical_bias="0.156" />
 
     <Button
-        android:id="@+id/button5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="@color/teal_200"
-        android:padding="5dp"
-        android:text="View Data Taken "
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275" />
-
-    <Button
         android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="200dp"
-        android:background="@color/teal_200"
+        android:background="@color/colorPrimary"
         android:text="Sign Out"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"

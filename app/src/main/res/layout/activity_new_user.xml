@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    tools:context=".NewUserActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="32sp"
+            android:hint="Name"
+            android:layout_margin="10dp"/>
+
+        <EditText
+            android:id="@+id/two"
+            android:hint="Email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="32sp"
+            android:layout_margin="10dp"/>
+
+        <EditText
+            android:id="@+id/three"
+            android:hint="centerName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="32sp"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:hint="Center code"
+            android:id="@+id/four"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="32sp"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/ten"
+            android:hint="category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="32sp"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/five"
+            android:hint="Gender"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="32sp"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/six"
+            android:hint="DOB"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="32sp"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/seven"
+            android:hint="Village"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="32sp"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/eight"
+            android:hint="State"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="32sp"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/nine"
+            android:hint="Mobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="32sp"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apply"
+            android:background="@drawable/ic_photo_black_48dp"
+            android:textSize="24sp"
+            android:layout_margin="10dp"
+            />
+    </LinearLayout>
+
+
+</ScrollView>
