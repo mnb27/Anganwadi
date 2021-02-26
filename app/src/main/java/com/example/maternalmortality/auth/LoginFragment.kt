@@ -81,9 +81,9 @@ class LoginFragment : Fragment() {
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-
-
-                        startActivity(Intent(activity, MainActivity::class.java))
+                        val intent  = Intent(activity, MainActivity::class.java)
+                        intent.putExtra("useremail",email)
+                        startActivity(intent)
                     } else {
                         Toast.makeText(context, "Something went wrong. Please try again.", Toast.LENGTH_LONG).show()
                         Log.d(TAG, task.exception.toString())

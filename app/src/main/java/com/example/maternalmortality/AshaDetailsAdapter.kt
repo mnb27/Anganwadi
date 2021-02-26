@@ -9,19 +9,22 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.maternalmortality.models.PatientDetails
+import com.example.maternalmortality.models.New_Registration
 import com.google.firebase.firestore.FirebaseFirestore
 
-class DetailsAdapter(var context: Context, var detailsList: MutableList<PatientDetails>):
-    RecyclerView.Adapter<DetailsAdapter.DetailsViewHolder>() {
+
+
+
+class AshaDetailsAdapter(var context: Context, var detailsList: MutableList<New_Registration>):
+        RecyclerView.Adapter<AshaDetailsAdapter.DetailsViewHolder>() {
 
     class DetailsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var nameText: TextView = itemView.findViewById(R.id.nameOfTask)
         var villageText: TextView = itemView.findViewById(R.id.villageOfTask)
         var viewMore: TextView = itemView.findViewById(R.id.viewMore)
-        var editButton: ImageView = itemView.findViewById(R.id.editButton)
+
     }
-    override fun onBindViewHolder(holder: DetailsAdapter.DetailsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AshaDetailsAdapter.DetailsViewHolder, position: Int) {
         val details = detailsList[position]
         holder.nameText.text = details.name
         holder.villageText.text = details.village
@@ -30,21 +33,21 @@ class DetailsAdapter(var context: Context, var detailsList: MutableList<PatientD
 
 
 
-        holder.editButton.setOnClickListener {
-            val intent = Intent(context,CollectDataActivity::class.java)
-            intent.putExtra("previous details",details)
-            intent.putExtra("Id",details.phone)
-            context.startActivity(intent)
-        }
-        
+//        holder.editButton.setOnClickListener {
+//            val intent = Intent(context,CollectDataActivity::class.java)
+//            intent.putExtra("previous details",details.name)
+//            intent.putExtra("Id",details.mobile)
+//            context.startActivity(intent)
+//        }
+
 
     }
 
     override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): DetailsAdapter.DetailsViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.details_item,parent,false)
+            parent: ViewGroup,
+            viewType: Int
+    ): AshaDetailsAdapter.DetailsViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.asha_details_item,parent,false)
         return DetailsViewHolder(itemView)
     }
 
@@ -52,7 +55,7 @@ class DetailsAdapter(var context: Context, var detailsList: MutableList<PatientD
         return detailsList.size
     }
 
-    fun setList(list: MutableList<PatientDetails>){
+    fun setList(list: MutableList<New_Registration>){
         detailsList = list
         notifyDataSetChanged()
     }
