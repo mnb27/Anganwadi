@@ -17,23 +17,27 @@ class Dashboard : AppCompatActivity() {
         val admin: CardView = findViewById(R.id.adminportal)
         val feedback: CardView = findViewById(R.id.feedback)
 
+
         anm.setOnClickListener {
+            GlobalVar.Companion.globalUser = 2;
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         asha.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            GlobalVar.Companion.globalUser = 3;
+            val intent = Intent(this, AshaActivity::class.java)
             startActivity(intent)
         }
         admin.setOnClickListener {
+            GlobalVar.Companion.globalUser = 1;
             val intent = Intent(this, AdminActivity::class.java)
             startActivity(intent)
         }
 
-//        feedback.setOnClickListener {
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
-//        }
+        feedback.setOnClickListener {
+            val intent = Intent(this, FeedbackActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }

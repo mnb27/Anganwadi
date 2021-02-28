@@ -18,9 +18,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ADMIN PORTAL"
-            android:textSize="24sp"
+            android:fontFamily="@font/atomic_age"
+            android:textSize="30sp"
             android:textStyle="bold|italic"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#3192F4"
             android:layout_margin="20dp"/>
 
         <GridLayout
@@ -39,7 +40,7 @@
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_margin="10dp"
-                app:cardBackgroundColor="#c334eb"
+                app:cardBackgroundColor="#3192F4"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp">
 
@@ -58,9 +59,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ASHA Registration"
+                        android:text="Approve Asha"
                         android:textSize="18sp"
-                        android:textColor="#000000"
+                        android:textColor="#ffffff"
                         android:layout_marginTop="20dp"/>
 
                 </LinearLayout>
@@ -74,7 +75,7 @@
                 android:id="@+id/button2"
 
                 android:layout_margin="10dp"
-                app:cardBackgroundColor="#c334eb"
+                app:cardBackgroundColor="#3192F4"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp">
 
@@ -94,8 +95,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:text="ANM Registration"
-                        android:textColor="#000000"
+                        android:text="Approve ANM"
+                        android:textColor="#ffffff"
                         android:textSize="18sp" />
 
                 </LinearLayout>
@@ -108,7 +109,7 @@
                 android:id="@+id/button1"
 
                 android:layout_margin="10dp"
-                app:cardBackgroundColor="#c334eb"
+                app:cardBackgroundColor="#3192F4"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp">
 
@@ -129,7 +130,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="Register"
-                        android:textColor="#000000"
+                        android:textColor="#ffffff"
                         android:textSize="18sp" />
 
                 </LinearLayout>
@@ -141,7 +142,7 @@
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_margin="10dp"
-                app:cardBackgroundColor="#c334eb"
+                app:cardBackgroundColor="#3192F4"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp">
 
@@ -162,7 +163,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="Feedback"
-                        android:textColor="#000000"
+                        android:textColor="#ffffff"
                         android:textSize="18sp" />
 
                 </LinearLayout>
@@ -174,7 +175,7 @@
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_margin="10dp"
-                app:cardBackgroundColor="#c334eb"
+                app:cardBackgroundColor="#3192F4"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp">
 
@@ -188,14 +189,14 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="18dp"
-                        android:src="@color/common_google_signin_btn_text_light_default" />
+                        android:src="@drawable/ic_login" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="Log Out"
-                        android:textColor="#000000"
+                        android:textColor="#ffffff"
                         android:textSize="18sp" />
 
                 </LinearLayout>

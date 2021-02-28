@@ -84,6 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:background="@drawable/button_shape"
+        android:textSize="20sp"
         android:padding="15dp"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"

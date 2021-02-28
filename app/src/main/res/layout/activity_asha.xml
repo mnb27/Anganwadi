@@ -5,36 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Dashboard">
-
+    tools:context=".AshaActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="66dp"
-            android:layout_marginBottom="40dp"
-            android:background="#3192F4"
-            android:fontFamily="@font/black_ops_one"
-            android:padding="10sp"
-            android:text="MATERNAL CARE"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:textSize="30sp"
-            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:text="ASHA PORTAL"
             android:fontFamily="@font/atomic_age"
-            android:text="DASHBOARD"
+            android:textSize="30sp"
+            android:textStyle="bold|italic"
             android:textColor="#3192F4"
-            android:textSize="24sp"
-            android:textStyle="bold|italic" />
+            android:layout_margin="20dp"/>
 
         <GridLayout
             android:layout_width="match_parent"
@@ -48,7 +35,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/anmportal"
+                android:id="@+id/button3"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_margin="10dp"
@@ -66,12 +53,12 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="18dp"
-                        android:src="@drawable/ic_anm" />
+                        android:src="@drawable/ic_collect" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ANM Portal"
+                        android:text="Doctor Assist"
                         android:textSize="18sp"
                         android:textColor="#ffffff"
                         android:layout_marginTop="20dp"/>
@@ -82,9 +69,10 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/ashaportal"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
+                android:id="@+id/button4"
+
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#3192F4"
                 app:cardCornerRadius="12dp"
@@ -100,13 +88,13 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="18dp"
-                        android:src="@drawable/ic_assist" />
+                        android:src="@drawable/ic_people" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:text="Asha Portal"
+                        android:text="View Assigned"
                         android:textColor="#ffffff"
                         android:textSize="18sp" />
 
@@ -115,9 +103,10 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/adminportal"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
+                android:id="@+id/none"
+
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#3192F4"
                 app:cardCornerRadius="12dp"
@@ -133,13 +122,13 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="18dp"
-                        android:src="@drawable/ic_admin" />
+                        android:src="@drawable/ic_see" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:text="Admin Portal"
+                        android:text="Daily Records"
                         android:textColor="#ffffff"
                         android:textSize="18sp" />
 
@@ -148,9 +137,10 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/feedback"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
+                android:id="@+id/button"
+
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#3192F4"
                 app:cardCornerRadius="12dp"
@@ -166,13 +156,13 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="18dp"
-                        android:src="@drawable/ic_feedback" />
+                        android:src="@drawable/ic_login" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:text="Feedback"
+                        android:text="Logout"
                         android:textColor="#ffffff"
                         android:textSize="18sp" />
 

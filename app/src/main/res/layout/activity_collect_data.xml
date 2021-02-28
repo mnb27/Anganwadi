@@ -12,116 +12,185 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
-        <EditText
-            android:id="@+id/one"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/one"
             android:hint="Name"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/two"
             android:hint="Date"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/three"
             android:hint="Age"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
-        <EditText
-            android:hint="Village"
-            android:id="@+id/four"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
-        <EditText
+            android:layout_height="wrap_content"
+            android:id="@+id/four"
+            android:hint="Village"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/five"
             android:hint="Religion"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
-        <EditText
+            android:layout_height="wrap_content"
             android:id="@+id/six"
             android:hint="Caste"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
-        <EditText
+            android:layout_height="wrap_content"
             android:id="@+id/seven"
-            android:hint="Phone no"
+            android:hint="Phone No."
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
-        <EditText
+            android:layout_height="wrap_content"
             android:id="@+id/eight"
             android:hint="L - para (1st kid, 2nd kid)"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
-        <EditText
+            android:layout_height="wrap_content"
             android:id="@+id/nine"
             android:hint="LMP (Last menstrual period)"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
-        <EditText
+            android:layout_height="wrap_content"
             android:id="@+id/ten"
             android:hint="EDOD (Estimated time of delivery )"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
-        <EditText
-            android:hint="Tetanus 1"
+            android:layout_height="wrap_content"
             android:id="@+id/eleven"
+            android:hint="Tetanus 1"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
-        <EditText
-            android:hint="Tetanus 2"
+            android:layout_height="wrap_content"
             android:id="@+id/twelve"
+            android:hint="Tetanus 2"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
-        <EditText
+            android:layout_height="wrap_content"
             android:id="@+id/thirteen"
             android:hint="Anti Natal card (ANC) "
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/fourteen"
             android:hint="Heart Beat"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/fifteen"
-            android:hint="BP"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="32sp"
-            android:layout_margin="10dp"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/fifteen"
+            android:hint="Blood Pressure"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/saveButton"

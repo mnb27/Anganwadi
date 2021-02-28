@@ -12,43 +12,54 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
-        <EditText
-            android:id="@+id/one"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="15sp"
-            android:hint="Did you get complete reimbursement for the food provided in last 3 months(Y/N)?"
-            android:layout_margin="10dp"/>
-
-        <EditText
-            android:id="@+id/two"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="15sp"
-            android:hint="Did you get the honourarium regularly in the last six months?(Y/N)?"
-            android:layout_margin="10dp"/>
-
-        <EditText
+            android:layout_height="wrap_content"
             android:id="@+id/three"
+            android:hint="Do you get any help from anganwadi supervisor ?"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="15sp"
-            android:hint="Do you get any help
-from aanganwadi
-supervisor to resolve
-problems related to
-the Aanganwadi?(Y/N)?"
-            android:layout_margin="10dp"/>
-        <EditText
+            android:layout_height="wrap_content"
+            android:id="@+id/two"
+            android:hint="Did you get the honourarium regularly in last 6 months? (Y/N)?"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/four"
+            android:hint="Do the lactating mothers come to Aanganwadi everyday / once in a month??"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="15sp"
-            android:hint="Do the lactating mothers come to
-Aanganwadi every day or once in a
-month??"
-            android:layout_margin="10dp"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/one"
+            android:hint="Did you get complete reimbursement (Y/N)?"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
@@ -58,9 +69,6 @@ month??"
             android:layout_margin="10dp"
             />
 
-
-
     </LinearLayout>
-
 
 </ScrollView>

@@ -3,6 +3,7 @@
     package="com.example.maternalmortality">
 
     <application
+        android:name=".GlobalVar"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,6 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaternalMortality">
         <activity android:name=".FeedbackActivity"></activity>
+        <activity android:name=".DataForDoctor" />
+        <activity android:name=".AshaActivity" />
         <activity android:name=".Dashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,13 +24,16 @@
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/asha_details_item" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".ASHA_request" />
         <activity android:name=".ANMrequest" />
         <activity android:name=".NewUserActivity" />
         <activity android:name=".AdminActivity" />
         <activity android:name=".CollectDataActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".auth.AuthenticationActivity" />
     </application>
 

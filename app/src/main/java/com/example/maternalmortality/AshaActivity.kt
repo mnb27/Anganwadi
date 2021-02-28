@@ -1,39 +1,39 @@
 package com.example.maternalmortality
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
+import android.content.Intent
 import android.widget.Button
 import androidx.cardview.widget.CardView
 import com.example.maternalmortality.auth.AuthenticationActivity
 import com.google.firebase.auth.FirebaseAuth
 
-class MainActivity : AppCompatActivity() {
+class AshaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_asha)
 
         if (FirebaseAuth.getInstance().currentUser == null) {
             startActivity(Intent(this, AuthenticationActivity::class.java))
             finish()
         }
 
-         val bundle:Bundle?=intent.extras
-         val nam = bundle?.get("useremail")
-         print(nam)
-
-//         if(nam=="admin@gmail.com")
-//         {
-//             startActivity(Intent(this, AdminActivity::class.java))
-//             finish()
-//         }
+        val bundle:Bundle?=intent.extras
+        val nam = bundle?.get("useremail")
+        print(nam)
+//        if(nam=="admin@gmail.com")
+//        {
+//            startActivity(Intent(this, AdminActivity::class.java))
+//            finish()
+//        }
 
         val signOutButton: CardView = findViewById(R.id.button)
 
-        val collectData: CardView = findViewById(R.id.button3)
+        val assignDoctor: CardView = findViewById(R.id.button3)
 
-        collectData.setOnClickListener {
-            val intent = Intent(this, CollectDataActivity::class.java)
+        assignDoctor.setOnClickListener {
+            val intent = Intent(this, DataForDoctor::class.java)
             startActivity(intent)
         }
 
@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         signOutButton.setOnClickListener{
             firebase.signOut()
+
             val intent = Intent(this, Dashboard::class.java)
             startActivity(intent)
             finish()
