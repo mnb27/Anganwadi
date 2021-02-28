@@ -16,7 +16,12 @@ class AdminActivity : AppCompatActivity() {
         val newpost: CardView = findViewById(R.id.button1)
         val anmrequest: CardView = findViewById(R.id.button2)
         val asharequest: CardView = findViewById(R.id.button3)
+        val feedback: CardView = findViewById(R.id.feedback)
 
+        feedback.setOnClickListener {
+            val intent = Intent(this, FeedbackActivity::class.java)
+            startActivity(intent)
+        }
         newpost.setOnClickListener {
             val intent = Intent(this, NewUserActivity::class.java)
             startActivity(intent)
