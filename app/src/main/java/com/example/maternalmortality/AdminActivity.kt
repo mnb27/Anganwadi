@@ -16,6 +16,17 @@ class AdminActivity : AppCompatActivity() {
         val newpost: CardView = findViewById(R.id.button1)
         val anmrequest: CardView = findViewById(R.id.button2)
         val asharequest: CardView = findViewById(R.id.button3)
+        val feedback: CardView = findViewById(R.id.feedback)
+
+        if (FirebaseAuth.getInstance().currentUser == null) {
+            startActivity(Intent(this, AuthenticationActivity::class.java))
+            finish()
+        }
+
+        feedback.setOnClickListener {
+            val intent = Intent(this, FeedbackActivity::class.java)
+            startActivity(intent)
+        }
 
         newpost.setOnClickListener {
             val intent = Intent(this, NewUserActivity::class.java)
@@ -35,7 +46,7 @@ class AdminActivity : AppCompatActivity() {
 
         signOutButton.setOnClickListener{
             firebase.signOut()
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, Dashboard::class.java)
             startActivity(intent)
             finish()
         }

@@ -13,8 +13,7 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
-import com.example.maternalmortality.MainActivity
-import com.example.maternalmortality.R
+import com.example.maternalmortality.*
 import com.example.maternalmortality.models.User
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -97,6 +96,8 @@ class RegisterFragment : Fragment() {
 
             signUpProgress.visibility = View.VISIBLE
 
+            var currUser = GlobalVar.Companion.globalUser;
+
             val auth = FirebaseAuth.getInstance()
 
             auth.createUserWithEmailAndPassword(email, password)
@@ -110,11 +111,19 @@ class RegisterFragment : Fragment() {
                         val firestore = FirebaseFirestore.getInstance().collection("Users")
                         firestore.document(auth.currentUser?.uid!!).set(user)
                             .addOnCompleteListener { task2 ->
-                                if (task2.isSuccessful) {
+                                if (task2.isSuccessful && currUser==2) {
                                     val intent = Intent(activity, MainActivity::class.java)
                                     startActivity(intent)
-                                    //startActivity(Intent(activity, MainActivity::class.java))
-                                } else {
+                                }
+                                else if (task2.isSuccessful && currUser==1) {
+                                    val intent = Intent(activity, AdminActivity::class.java)
+                                    startActivity(intent)
+                                }
+                                else if (task2.isSuccessful && currUser==3) {
+                                    val intent = Intent(activity, AshaActivity::class.java)
+                                    startActivity(intent)
+                                }
+                                else {
                                     Toast.makeText(context, "Something went wrong. Please try again.", Toast.LENGTH_LONG).show()
                                     Log.d(TAG, task2.exception.toString())
                                 }

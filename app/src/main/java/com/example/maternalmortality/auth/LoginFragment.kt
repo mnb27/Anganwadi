@@ -13,8 +13,7 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
-import com.example.maternalmortality.MainActivity
-import com.example.maternalmortality.R
+import com.example.maternalmortality.*
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 
@@ -78,13 +77,26 @@ class LoginFragment : Fragment() {
 
             loginProgress.visibility = View.VISIBLE
 
+            var user = GlobalVar.Companion.globalUser;
+
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
+                    if (task.isSuccessful && user==2) {
                         val intent  = Intent(activity, MainActivity::class.java)
                         intent.putExtra("useremail",email)
                         startActivity(intent)
-                    } else {
+                    }
+                    else if (task.isSuccessful && user==1) {
+                        val intent  = Intent(activity, AdminActivity::class.java)
+                        intent.putExtra("useremail",email)
+                        startActivity(intent)
+                    }
+                    else if (task.isSuccessful && user==3) {
+                        val intent  = Intent(activity, AshaActivity::class.java)
+                        intent.putExtra("useremail",email)
+                        startActivity(intent)
+                    }
+                    else {
                         Toast.makeText(context, "Something went wrong. Please try again.", Toast.LENGTH_LONG).show()
                         Log.d(TAG, task.exception.toString())
                     }

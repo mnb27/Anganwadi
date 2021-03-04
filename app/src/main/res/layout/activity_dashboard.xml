@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".AdminActivity">
+    tools:context=".Dashboard">
 
 
     <LinearLayout
@@ -13,16 +13,28 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_marginBottom="40dp"
+            android:background="#3192F4"
+            android:fontFamily="@font/black_ops_one"
+            android:padding="10sp"
+            android:text="MATERNAL CARE"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ADMIN PORTAL"
+            android:layout_margin="20dp"
             android:fontFamily="@font/atomic_age"
-            android:textSize="30sp"
-            android:textStyle="bold|italic"
+            android:text="DASHBOARD"
             android:textColor="#3192F4"
-            android:layout_margin="20dp"/>
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
 
         <GridLayout
             android:layout_width="match_parent"
@@ -36,7 +48,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/button3"
+                android:id="@+id/anmportal"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_margin="10dp"
@@ -54,12 +66,12 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="18dp"
-                        android:src="@drawable/person_icon" />
+                        android:src="@drawable/ic_anm" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Approve Asha"
+                        android:text="ANM Portal"
                         android:textSize="18sp"
                         android:textColor="#ffffff"
                         android:layout_marginTop="20dp"/>
@@ -70,10 +82,9 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/ashaportal"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
-                android:id="@+id/button2"
-
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#3192F4"
                 app:cardCornerRadius="12dp"
@@ -89,13 +100,13 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="18dp"
-                        android:src="@drawable/person_icon" />
+                        android:src="@drawable/ic_assist" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:text="Approve ANM"
+                        android:text="Asha Portal"
                         android:textColor="#ffffff"
                         android:textSize="18sp" />
 
@@ -104,10 +115,9 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/adminportal"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
-                android:id="@+id/button1"
-
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#3192F4"
                 app:cardCornerRadius="12dp"
@@ -123,13 +133,13 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="18dp"
-                        android:src="@drawable/add_icon" />
+                        android:src="@drawable/ic_admin" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:text="Register"
+                        android:text="Admin Portal"
                         android:textColor="#ffffff"
                         android:textSize="18sp" />
 
@@ -156,46 +166,13 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="18dp"
-                        android:src="@drawable/feed_icon" />
+                        android:src="@drawable/ic_feedback" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="Feedback"
-                        android:textColor="#ffffff"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/button"
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="#3192F4"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="18dp"
-                        android:src="@drawable/ic_login" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="Log Out"
                         android:textColor="#ffffff"
                         android:textSize="18sp" />
 
