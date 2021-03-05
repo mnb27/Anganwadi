@@ -17,7 +17,7 @@ import com.example.maternalmortality.*
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 
-class LoginFragment : Fragment() {
+class   LoginFragment : Fragment() {
 
     companion object {
         const val TAG = "LoginFragment"
