@@ -7,9 +7,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.maternalmortality.models.New_Registration
+import com.example.maternalmortality.models.ANMUser
+import com.example.maternalmortality.models.AshaUser
+
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.google.firebase.ktx.Firebase
 
 class NewUserActivity : AppCompatActivity() {
@@ -51,7 +55,7 @@ class NewUserActivity : AppCompatActivity() {
             val New_user = New_Registration(name,email,center_name,center_code,category,gender,dob,village,state,mobile,status)
             val firestore = FirebaseFirestore.getInstance().collection("New_Registration")
 
-            firestore.document().set(New_user)
+            firestore.document(mobile).set(New_user)
                 .addOnCompleteListener { task->
                     if(task.isSuccessful){
                         Toast.makeText(this, "Successfully Applied",Toast.LENGTH_LONG).show()
