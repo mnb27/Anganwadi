@@ -1,6 +1,7 @@
 package com.example.maternalmortality
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -42,16 +43,14 @@ class ASHA_request : AppCompatActivity() {
                         list.add(document.toObject(New_Registration::class.java))
                     }
                     (recyclerView.adapter as AshaDetailsAdapter).notifyDataSetChanged()
+                    if(list.isEmpty()) {
+                        Toast.makeText(this,"No pending requests",Toast.LENGTH_LONG).show()
+                        val intent = Intent(this, AdminActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
                 .addOnFailureListener{
                     Toast.makeText(this,"Error",Toast.LENGTH_LONG).show()
                 }
-
-
-
-
-
-
-
     }
 }
