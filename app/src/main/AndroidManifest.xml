@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaternalMortality">
-        <activity android:name=".AshaPatients"></activity>
+        <activity android:name=".InfoCard"></activity>
+        <activity android:name=".AshaPatients" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".DataForDoctor" />
         <activity android:name=".AshaActivity" />
