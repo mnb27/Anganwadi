@@ -3,9 +3,6 @@ package com.example.maternalmortality
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import com.example.maternalmortality.models.New_Registration
 import com.example.maternalmortality.models.ANMUser
 import com.example.maternalmortality.models.AshaUser
@@ -16,23 +13,45 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.ktx.Firebase
 
+import android.app.DatePickerDialog
+import android.view.View
+import android.widget.*
+import java.util.*
+import android.widget.RadioGroup
+import kotlinx.android.synthetic.main.activity_new_user.*
+
 class NewUserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_user)
 
+        /// date picker start
+        val mPickTimeBtn = findViewById<Button>(R.id.pickDateBtn)
+        val dob: TextInputLayout = findViewById(R.id.six)
+
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        mPickTimeBtn.setOnClickListener {
+            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                // Display Selected date in TextView
+                dob.getEditText()?.setText("" + dayOfMonth + " / " + month + " / " + year)
+            }, year, month, day)
+            dpd.show()
+        }
+        //////end
+
+
         val name: TextInputLayout = findViewById(R.id.one)
         val email: TextInputLayout = findViewById(R.id.two)
         val center_name: TextInputLayout = findViewById(R.id.three)
         val center_code: TextInputLayout = findViewById(R.id.four)
-        val gender: TextInputLayout = findViewById(R.id.five)
-        val dob: TextInputLayout = findViewById(R.id.six)
+
         val village: TextInputLayout = findViewById(R.id.seven)
         val state: TextInputLayout = findViewById(R.id.eight)
         val mobile: TextInputLayout = findViewById(R.id.nine)
-        val category:TextInputLayout = findViewById(R.id.ten)
-
-
 
         val saveButton: Button =findViewById(R.id.saveButton)
 
@@ -45,8 +64,16 @@ class NewUserActivity : AppCompatActivity() {
             var email = email.editText?.text.toString()
             var center_name = center_name.editText?.text.toString()
             var center_code = center_code.editText?.text.toString()
-            var category = category.editText?.text.toString()
-            var gender = gender.editText?.text.toString()
+
+            // radio button
+            var category:String
+            if(anmRadio.isChecked) category="ANM"
+            else category="asha"
+
+            var gender:String
+            if(male.isChecked) gender="male"
+            else gender="female"
+
             var dob = dob.editText?.text.toString()
             var village = village.editText?.text.toString()
             var state = state.editText?.text.toString()
