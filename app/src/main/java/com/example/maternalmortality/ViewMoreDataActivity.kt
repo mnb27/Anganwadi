@@ -42,7 +42,7 @@ class ViewMoreDataActivity : AppCompatActivity() {
         tetanus1.editText?.setText(previousDetails?.tetanus1)
         tetanus2.editText?.setText(previousDetails?.tetanus2)
         anc.editText?.setText(previousDetails?.anc)
-        heartbeat.editText?.setText(previousDetails?.heatbeat)
+        heartbeat.editText?.setText(previousDetails?.heartbeat)
         bp.editText?.setText(previousDetails?.bp)
 
         name.isEnabled = false

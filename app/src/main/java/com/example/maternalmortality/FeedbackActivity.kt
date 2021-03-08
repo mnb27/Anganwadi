@@ -42,7 +42,7 @@ class FeedbackActivity : AppCompatActivity() {
                 .addOnCompleteListener { task->
                     if(task.isSuccessful){
                         Toast.makeText(this, "Successfully Applied",Toast.LENGTH_LONG).show()
-                        val intent = Intent(this,AdminActivity::class.java)
+                        val intent = Intent(this,Dashboard::class.java)
                         startActivity(intent)
                         finish()
                     }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFFFF"
-    tools:context=".NewUserActivity">
+    tools:context=".DataForDoctor">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,11 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/one"
-            android:hint="Name of worker"
+            android:hint="Fever (°C)"
             android:layout_margin="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -29,11 +30,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/two"
-            android:hint="Email"
+            android:hint="Headache (Y/N)"
             android:layout_margin="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -41,11 +43,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/three"
-            android:hint="Center Name"
+            android:hint="Blurring vision (Y/N)"
             android:layout_margin="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -53,83 +56,51 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/four"
-            android:hint="Center Code"
+            android:hint="Swelling (Y/N)"
             android:layout_margin="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp">
-            <TextView
-                android:layout_width="wrap_content"
+            android:id="@+id/five"
+            android:hint="Puffed Face (Y/N)"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Gender: "
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"/>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/male"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Male"
-                android:textSize="15dp"
-                />
-            <RadioButton
-                android:id="@+id/female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Female"
-                android:textSize="15dp"
-                />
-        </RadioGroup>
-        </LinearLayout>
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
+            android:id="@+id/six"
+            android:hint="Palpitations (Y/N)"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left|center_vertical"
-                android:layout_weight="1"
-                android:ellipsize="end"
-                android:gravity="left|center_vertical"
-                android:singleLine="true"
-                android:id="@+id/six"
-                android:hint="Date of birth"
-                android:layout_margin="10dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </com.google.android.material.textfield.TextInputLayout>
-            <Button
-                android:id="@+id/pickDateBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="58dp"
-                android:layout_marginTop="15dp"
-                android:text="Pick Date" />
-        </LinearLayout>
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/seven"
-            android:hint="Village"
+            android:hint="Fatigability (Y/N)"
             android:layout_margin="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -137,11 +108,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/eight"
-            android:hint="State"
+            android:hint="Breathlessness at rest (Y/N)"
             android:layout_margin="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -149,54 +121,54 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/nine"
-            android:hint="Mobile No."
+            android:hint="Pain in abdomen (Y/N)"
             android:layout_margin="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Category: "
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"/>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <RadioButton
-                    android:id="@+id/anmRadio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ANM Worker"
-                    android:textSize="15dp"
-                    />
-                <RadioButton
-                    android:id="@+id/ashaRadio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Asha Worker"
-                    android:textSize="15dp"
-                    />
-            </RadioGroup>
-        </LinearLayout>
-
-
-        <Button
-            android:id="@+id/saveButton"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Apply"
-            android:textSize="24sp"
-            android:layout_margin="10dp"
-            />
+            android:id="@+id/ten"
+            android:hint="Vaginal Bleeding (Y/N)"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/eleven"
+            android:hint="Water Discharge (Y/N)"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/twelve"
+            android:hint="Reduced Fatal Movements"
+            android:layout_margin="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
 
     </LinearLayout>
 

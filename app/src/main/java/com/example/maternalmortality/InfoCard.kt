@@ -41,8 +41,8 @@ class InfoCard : AppCompatActivity() {
 
         addToList("Danger Sign 4","• Headache, blurring of vision, fits and swelling all over the body",R.drawable.headache)
 
-        addToList("Danger Sign 5","• Labour pain before term\n • Labour pain for more than 12 hours\n • Reduced fetal movment",R.drawable.labor)
+        addToList("Danger Sign 5","• Labour pain before term\n• Labour pain for more than 12 hours\n• Reduced fetal movment",R.drawable.labor)
 
-        addToList("Danger Sign 6","• Bursting of water bag without labour pains\n • Preterm labour pains (<37 weeks)",R.drawable.water)
+        addToList("Danger Sign 6","• Bursting of water bag without labour pains\n• Preterm labour pains (<37 weeks)",R.drawable.water)
     }
 }

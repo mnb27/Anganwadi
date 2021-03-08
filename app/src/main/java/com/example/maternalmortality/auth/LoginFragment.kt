@@ -1,10 +1,12 @@
 package com.example.maternalmortality.auth
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.util.Patterns
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,12 +14,12 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.example.maternalmortality.*
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
-class   LoginFragment : Fragment() {
+class LoginFragment : Fragment() {
 
     companion object {
         const val TAG = "LoginFragment"
@@ -88,25 +90,61 @@ class   LoginFragment : Fragment() {
 
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
-                    if (task.isSuccessful && user==2) {
+
+                    if(task.isSuccessful) {
+                        /*val intent  = Intent(activity, Dashboard::class.java)
+                        startActivity(intent)
+                        finishActivity()*/
+
+                        var auth = FirebaseAuth.getInstance()
+                        var firestore = FirebaseFirestore.getInstance()
+
+                        var c=0
+
+                        if(auth.currentUser != null){
+
+                            if(auth.currentUser?.email == "admin@gmail.com") {
+                                val intent = Intent(activity, AdminActivity::class.java)
+                                startActivity(intent)
+                                finishActivity()
+                            }
+                            else  {
+                                firestore.collection("ANMUser").whereEqualTo("email",auth.currentUser?.email).get()
+                                    .addOnSuccessListener {
+                                        for(document in it){
+                                            c=1
+                                        }
+                                        if(c==1){
+                                            val intent = Intent(activity, MainActivity::class.java)
+                                            startActivity(intent)
+                                            finishActivity()
+                                        }
+                                        else if(c==0) {
+                                            val intent = Intent(activity, AshaActivity::class.java)
+                                            startActivity(intent)
+                                            finishActivity()
+                                        }
+                                    }
+                            }
+                        }
+
+                    }
+                    /*if (task.isSuccessful && user==2) {
                         val intent  = Intent(activity, MainActivity::class.java)
                         intent.putExtra("useremail",email)
                         startActivity(intent)
-                        finishActivity()
                     }
                     else if (task.isSuccessful && user==1) {
                         val intent  = Intent(activity, AdminActivity::class.java)
                         intent.putExtra("useremail",email)
                         startActivity(intent)
-                        finishActivity()
                     }
                     else if (task.isSuccessful && user==3) {
                         val intent  = Intent(activity, AshaActivity::class.java)
                         intent.putExtra("useremail",email)
                         startActivity(intent)
-                        finishActivity()
-                    }
-                    else {
+                    }*/
+                     else {
                         Toast.makeText(context, "Something went wrong. Please try again.", Toast.LENGTH_LONG).show()
                         Log.d(TAG, task.exception.toString())
                     }

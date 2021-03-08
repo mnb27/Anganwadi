@@ -52,12 +52,5 @@ class ANMrequest : AppCompatActivity() {
             .addOnFailureListener{
                 Toast.makeText(this,"Error",Toast.LENGTH_LONG).show()
             }
-
-
-
-
-
-
-
     }
 }

@@ -30,19 +30,17 @@ class AshaActivity : AppCompatActivity() {
 
         val signOutButton: CardView = findViewById(R.id.button)
 
-        val assignDoctor: CardView = findViewById(R.id.button3)
+
 
         val viewAssigned: CardView = findViewById(R.id.button4)
 
-        assignDoctor.setOnClickListener {
-            val intent = Intent(this, DataForDoctor::class.java)
-            startActivity(intent)
-        }
 
         viewAssigned.setOnClickListener {
             val intent = Intent(this, AshaPatients::class.java)
             startActivity(intent)
         }
+
+
 
         val firebase = FirebaseAuth.getInstance()
 

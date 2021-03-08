@@ -83,17 +83,17 @@ class NewUserActivity : AppCompatActivity() {
             val firestore = FirebaseFirestore.getInstance().collection("New_Registration")
 
             firestore.document(mobile).set(New_user)
-                .addOnCompleteListener { task->
-                    if(task.isSuccessful){
-                        Toast.makeText(this, "Successfully Applied",Toast.LENGTH_LONG).show()
-                        val intent = Intent(this,AdminActivity::class.java)
-                        startActivity(intent)
-                        finish()
+                    .addOnCompleteListener { task->
+                        if(task.isSuccessful){
+                            Toast.makeText(this, "Successfully Applied",Toast.LENGTH_LONG).show()
+                            val intent = Intent(this,AdminActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
+                        else{
+                            Toast.makeText(this,"Error",Toast.LENGTH_LONG).show()
+                        }
                     }
-                    else{
-                        Toast.makeText(this,"Error",Toast.LENGTH_LONG).show()
-                    }
-                }
 
 
         }

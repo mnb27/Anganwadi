@@ -1,5 +1,6 @@
 package com.example.maternalmortality
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,7 +11,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.maternalmortality.models.PatientDetails
 import com.google.firebase.firestore.FirebaseFirestore
 
 import androidx.appcompat.app.AppCompatActivity
@@ -18,14 +18,13 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
 import com.example.maternalmortality.auth.RegisterFragment
-import com.example.maternalmortality.models.User
-import com.example.maternalmortality.models.AshaUser
-import com.example.maternalmortality.models.ANMUser
+import com.example.maternalmortality.models.*
 
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.ktx.Firebase
+import org.jetbrains.anko.doAsync
 
 
 class AshaPatientsAdapter(var context: Context, var detailsList: MutableList<PatientDetails>):
@@ -35,7 +34,7 @@ class AshaPatientsAdapter(var context: Context, var detailsList: MutableList<Pat
         var nameText: TextView = itemView.findViewById(R.id.nameOfTask)
         var villageText: TextView = itemView.findViewById(R.id.villageOfTask)
         var viewMore: TextView = itemView.findViewById(R.id.viewMore)
-        var approve: Button = itemView.findViewById(R.id.button5)
+        var collectDoctorData: Button = itemView.findViewById(R.id.button5)
 
     }
     override fun onBindViewHolder(holder: AshaPatientsAdapter.DetailsViewHolder, position: Int) {
@@ -43,6 +42,24 @@ class AshaPatientsAdapter(var context: Context, var detailsList: MutableList<Pat
         holder.nameText.text = "Name: " + details.name
         holder.villageText.text = "Village: " + details.village
         holder.viewMore.text = "View More"
+
+
+        holder.viewMore.setOnClickListener {
+            val intent = Intent(context,ViewMoreDataActivity::class.java)
+            intent.putExtra("previous details",details)
+            context.startActivity(intent)
+
+        }
+
+        holder.collectDoctorData.setOnClickListener {
+
+                    val intent = Intent(context, DataForDoctor::class.java)
+                    intent.putExtra("previous details", details)
+                    context.startActivity(intent)
+            (context as Activity).finish()
+
+        }
+
     }
     override fun onCreateViewHolder(
         parent: ViewGroup,

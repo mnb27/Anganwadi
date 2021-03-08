@@ -45,13 +45,10 @@ class AshaDetailsAdapter(var context: Context, var detailsList: MutableList<New_
         holder.villageText.text = details.village
         holder.viewMore.text = "View More"
 
-
-
-
         holder.approve.setOnClickListener {
-            var Docref = FirebaseFirestore.getInstance().collection("New_Registration").document(details.mobile)
-            var ans = "approved"
-            Docref.update("status" , ans)
+            var Docref = FirebaseFirestore.getInstance().collection("New_Registration").document(details.mobile);
+            var ans = "approved";
+            Docref.update("status" , ans);
 
             // hide card on approval
             holder.nameText.visibility = View.GONE
@@ -98,6 +95,9 @@ class AshaDetailsAdapter(var context: Context, var detailsList: MutableList<New_
                                 firestore.document(mobile).set(user)
 
                             }
+
+
+
 
                         } else {
                             Toast.makeText(context, "Unable to add member", Toast.LENGTH_LONG).show()
