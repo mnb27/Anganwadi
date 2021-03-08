@@ -18,6 +18,7 @@ class Dashboard : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard)
 
 
+        val info: CardView = findViewById(R.id.info)
 
             /*if(list[0].type == "admin") {
                 val intent = Intent(this, AdminActivity::class.java)
@@ -57,7 +58,6 @@ class Dashboard : AppCompatActivity() {
             val admin: CardView = findViewById(R.id.adminportal)
             val feedback: CardView = findViewById(R.id.feedback)
 
-
             anm.setOnClickListener {
                 //GlobalVar.Companion.globalUser = 2;
                 val intent = Intent(this, MainActivity::class.java)
@@ -79,6 +79,11 @@ class Dashboard : AppCompatActivity() {
                 val intent = Intent(this, FeedbackActivity::class.java)
                 startActivity(intent)
             }
+        }
+
+        info.setOnClickListener {
+            val intent = Intent(this, InfoCard::class.java)
+            startActivity(intent)
         }
 
     }
