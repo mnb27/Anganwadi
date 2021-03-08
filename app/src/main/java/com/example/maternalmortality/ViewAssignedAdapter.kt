@@ -11,9 +11,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.maternalmortality.models.DoctorPatientDetails
 import com.example.maternalmortality.models.PatientDetails
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-
+import com.google.firebase.ktx.Firebase
 
 
 class ViewAssignedAdapter(var context: Context, var detailsList: MutableList<PatientDetails>):
@@ -25,6 +27,9 @@ class ViewAssignedAdapter(var context: Context, var detailsList: MutableList<Pat
         var viewMore: TextView = itemView.findViewById(R.id.viewMore)
         var editButton: ImageView = itemView.findViewById(R.id.editButton)
         var deleteButton: ImageView = itemView.findViewById(R.id.deleteButton)
+        var viewDoctor: TextView = itemView.findViewById(R.id.viewDoctor)
+        var viewAllWeek: TextView = itemView.findViewById(R.id.viewAllWeek)
+
     }
     override fun onBindViewHolder(holder: ViewAssignedAdapter.DetailsViewHolder, position: Int) {
         val details = detailsList[position]
@@ -32,6 +37,36 @@ class ViewAssignedAdapter(var context: Context, var detailsList: MutableList<Pat
         holder.villageText.text = details.village
         holder.viewMore.text = "View More"
 
+        holder.viewDoctor.setOnClickListener {
+            var list: MutableList<DoctorPatientDetails> = mutableListOf()
+            val firestore = FirebaseFirestore.getInstance().collection("DoctorPatientDetails")
+            firestore.whereEqualTo("name",details.name).whereEqualTo("village",details.village)
+                .whereEqualTo("anm_supervisior_email", FirebaseAuth.getInstance().currentUser?.email)
+                .get()
+                .addOnSuccessListener { documents->
+                    for(document in documents) {
+                        list.add(document.toObject(DoctorPatientDetails::class.java))
+                    }
+
+                    if(list.isEmpty()){
+                        Toast.makeText(context,"Not Taken Yet",Toast.LENGTH_LONG).show()
+                        return@addOnSuccessListener
+                    }
+
+                    val intent = Intent(context,ViewDoctorRecordActivity::class.java)
+                    intent.putExtra("id",details)
+                    context.startActivity(intent)
+
+                }
+                .addOnFailureListener{
+                    print("Error")
+                }
+
+        }
+
+        holder.viewAllWeek.setOnClickListener {
+
+        }
 
 
 
@@ -80,7 +115,7 @@ class ViewAssignedAdapter(var context: Context, var detailsList: MutableList<Pat
         parent: ViewGroup,
         viewType: Int
     ): ViewAssignedAdapter.DetailsViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.details_item,parent,false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.view_assigned_details_item,parent,false)
         return DetailsViewHolder(itemView)
     }
 

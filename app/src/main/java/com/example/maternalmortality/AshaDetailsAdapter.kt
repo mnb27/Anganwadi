@@ -49,16 +49,9 @@ class AshaDetailsAdapter(var context: Context, var detailsList: MutableList<New_
 
 
         holder.approve.setOnClickListener {
-            var Docref = FirebaseFirestore.getInstance().collection("New_Registration").document(details.mobile)
-            var ans = "approved"
-            Docref.update("status" , ans)
-
-            // hide card on approval
-            holder.nameText.visibility = View.GONE
-            holder.villageText.visibility = View.GONE
-            holder.viewMore.visibility = View.GONE
-            holder.approve.visibility = View.GONE
-
+            var Docref = FirebaseFirestore.getInstance().collection("New_Registration").document(details.mobile);
+            var ans = "approved";
+            Docref.update("status" , ans);
             val auth = FirebaseAuth.getInstance()
             var email = details.email.toString()
             var password = "Test12345"
@@ -98,6 +91,9 @@ class AshaDetailsAdapter(var context: Context, var detailsList: MutableList<New_
                                 firestore.document(mobile).set(user)
 
                             }
+
+
+
 
                         } else {
                             Toast.makeText(context, "Unable to add member", Toast.LENGTH_LONG).show()

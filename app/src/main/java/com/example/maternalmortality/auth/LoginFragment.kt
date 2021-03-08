@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.util.Patterns
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,12 +13,11 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.example.maternalmortality.*
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 
-class   LoginFragment : Fragment() {
+class LoginFragment : Fragment() {
 
     companion object {
         const val TAG = "LoginFragment"
@@ -29,13 +29,6 @@ class   LoginFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false)
-    }
-
-    // function to finish fragment
-    private fun finishActivity() {
-        if (activity != null) {
-            activity!!.finish()
-        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -88,25 +81,28 @@ class   LoginFragment : Fragment() {
 
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
-                    if (task.isSuccessful && user==2) {
+
+                    if(task.isSuccessful) {
+                        val intent  = Intent(activity, Dashboard::class.java)
+
+                        startActivity(intent)
+                    }
+                    /*if (task.isSuccessful && user==2) {
                         val intent  = Intent(activity, MainActivity::class.java)
                         intent.putExtra("useremail",email)
                         startActivity(intent)
-                        finishActivity()
                     }
                     else if (task.isSuccessful && user==1) {
                         val intent  = Intent(activity, AdminActivity::class.java)
                         intent.putExtra("useremail",email)
                         startActivity(intent)
-                        finishActivity()
                     }
                     else if (task.isSuccessful && user==3) {
                         val intent  = Intent(activity, AshaActivity::class.java)
                         intent.putExtra("useremail",email)
                         startActivity(intent)
-                        finishActivity()
-                    }
-                    else {
+                    }*/
+                     else {
                         Toast.makeText(context, "Something went wrong. Please try again.", Toast.LENGTH_LONG).show()
                         Log.d(TAG, task.exception.toString())
                     }
