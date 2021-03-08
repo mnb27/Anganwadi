@@ -148,9 +148,10 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/feedback"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
+                android:id="@+id/register"
+
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#3192F4"
                 app:cardCornerRadius="12dp"
@@ -166,13 +167,13 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="18dp"
-                        android:src="@drawable/ic_feedback" />
+                        android:src="@drawable/add_icon" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:text="Feedback"
+                        android:text="Register"
                         android:textColor="#ffffff"
                         android:textSize="18sp" />
 

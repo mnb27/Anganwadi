@@ -31,8 +31,17 @@ class CollectDataActivity : AppCompatActivity() {
         setContentView(R.layout.activity_collect_data)
 
         /// date picker start
-        val mPickTimeBtn = findViewById<Button>(R.id.pickDateBtn)
+        val mPickTimeBtn = findViewById<Button>(R.id.pickDateBtn) // date
+        val mPickTimeBtn1 = findViewById<Button>(R.id.pickDateBtn1) // lmp
+        val mPickTimeBtn2 = findViewById<Button>(R.id.pickDateBtn2) // edod
+        val mPickTimeBtn3= findViewById<Button>(R.id.pickDateBtn3) // tetanus1
+        val mPickTimeBtn4 = findViewById<Button>(R.id.pickDateBtn4) // tetanus2
+
         val date: TextInputLayout = findViewById(R.id.two)
+        val lmp: TextInputLayout = findViewById(R.id.nine)
+        val edod: TextInputLayout = findViewById(R.id.ten)
+        val tetanus1: TextInputLayout = findViewById(R.id.eleven)
+        val tetanus2: TextInputLayout = findViewById(R.id.twelve)
 
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
@@ -43,6 +52,34 @@ class CollectDataActivity : AppCompatActivity() {
             val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                 // Display Selected date in TextView
                 date.getEditText()?.setText("" + dayOfMonth + " / " + month + " / " + year)
+            }, year, month, day)
+            dpd.show()
+        }
+        mPickTimeBtn1.setOnClickListener {
+            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                // Display Selected date in TextView
+                lmp.getEditText()?.setText("" + dayOfMonth + " / " + month + " / " + year)
+            }, year, month, day)
+            dpd.show()
+        }
+        mPickTimeBtn2.setOnClickListener {
+            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                // Display Selected date in TextView
+                edod.getEditText()?.setText("" + dayOfMonth + " / " + month + " / " + year)
+            }, year, month, day)
+            dpd.show()
+        }
+        mPickTimeBtn3.setOnClickListener {
+            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                // Display Selected date in TextView
+                tetanus1.getEditText()?.setText("" + dayOfMonth + " / " + month + " / " + year)
+            }, year, month, day)
+            dpd.show()
+        }
+        mPickTimeBtn4.setOnClickListener {
+            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                // Display Selected date in TextView
+                tetanus2.getEditText()?.setText("" + dayOfMonth + " / " + month + " / " + year)
             }, year, month, day)
             dpd.show()
         }
@@ -62,10 +99,7 @@ class CollectDataActivity : AppCompatActivity() {
         val caste: TextInputLayout = findViewById(R.id.six)
         val phone: TextInputLayout = findViewById(R.id.seven)
         val lpara: TextInputLayout = findViewById(R.id.eight)
-        val lmp: TextInputLayout = findViewById(R.id.nine)
-        val edod: TextInputLayout = findViewById(R.id.ten)
-        val tetanus1: TextInputLayout = findViewById(R.id.eleven)
-        val tetanus2: TextInputLayout = findViewById(R.id.twelve)
+
         val anc: TextInputLayout = findViewById(R.id.thirteen)
         val heartbeat: TextInputLayout = findViewById(R.id.fourteen)
         val bp: TextInputLayout = findViewById(R.id.fifteen)
@@ -220,8 +254,7 @@ class CollectDataActivity : AppCompatActivity() {
 
                         println(anm_supervisor_email);
                         println(asha_supervisor_email);
-                        val patientDetails = PatientDetails(nameText, dateText, ageText, villageText, religionText, casteText, phoneText, lparaText, lmpText, edodText, tetanus1Text, tetanus2Text
-                                , ancText, heartbeatText, bpText, auth.currentUser?.uid.toString(), asha_supervisor_email, anm_supervisor_email)
+                        val patientDetails = PatientDetails(nameText, dateText, ageText, villageText, religionText, casteText, phoneText, lparaText, lmpText, edodText, tetanus1Text, tetanus2Text, ancText, heartbeatText, bpText, auth.currentUser?.uid.toString(), asha_supervisor_email, anm_supervisor_email)
                         val firestore = FirebaseFirestore.getInstance().collection("PatientDetails")
 
                         firestore.document().set(patientDetails)

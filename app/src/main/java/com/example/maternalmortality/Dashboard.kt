@@ -64,7 +64,7 @@ class Dashboard : AppCompatActivity() {
             val anm: CardView = findViewById(R.id.anmportal)
             val asha: CardView = findViewById(R.id.ashaportal)
             val admin: CardView = findViewById(R.id.adminportal)
-            val feedback: CardView = findViewById(R.id.feedback)
+            val register: CardView = findViewById(R.id.register)
 
             anm.setOnClickListener {
                 //GlobalVar.Companion.globalUser = 2;
@@ -85,8 +85,8 @@ class Dashboard : AppCompatActivity() {
                 finish()
             }
 
-            feedback.setOnClickListener {
-                val intent = Intent(this, FeedbackActivity::class.java)
+            register.setOnClickListener {
+                val intent = Intent(this, NewUserActivity::class.java)
                 startActivity(intent)
             }
         }

@@ -104,40 +104,6 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="170dp"
-                android:id="@+id/button1"
-
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="#3192F4"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="18dp"
-                        android:src="@drawable/add_icon" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="Register"
-                        android:textColor="#ffffff"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
                 android:id="@+id/feedback"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
@@ -156,7 +122,7 @@
                         android:layout_width="50dp"
                         android:layout_height="56dp"
                         android:layout_marginTop="18dp"
-                        android:src="@drawable/feed_icon" />
+                        android:src="@drawable/ic_feedback" />
 
                     <TextView
                         android:layout_width="wrap_content"
