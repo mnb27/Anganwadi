@@ -42,11 +42,21 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-firestore-ktx'
     implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-database-ktx'
+
+
+    // for profile photo view
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    // card view
     implementation "androidx.cardview:cardview:1.0.0"
 
     // ImagePicker
     implementation 'com.github.dhaval2404:imagepicker:1.8'
     implementation "org.jetbrains.anko:anko:0.10.8"
+
+    // picaso image loader
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
