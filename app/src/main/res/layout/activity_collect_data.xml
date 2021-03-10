@@ -7,46 +7,90 @@
     android:background="#FFFFFFFF"
     tools:context=".CollectDataActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/selectphoto_imageview_register"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:civ_border_width="4dp"
+            android:layout_margin="10dp"
+            app:civ_circle_background_color="#3192F4"
+            app:civ_border_color="#3192F4"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/purple_500"
+            />
+
+            <Button
+                android:id="@+id/selectphoto_button_register"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:ellipsize="end"
+                android:layout_margin="10dp"
+                android:singleLine="true"
+                android:text="Gallery"
+                android:textSize="10sp"
+                />
+
+            <Button
+                android:id="@+id/btCapturePhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:layout_margin="10dp"
+                android:text="Camera"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/one"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/one"
-            android:hint="Patient Name"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:hint="Patient Name">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"/>
+                android:inputType="textPersonName" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
+
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/two"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:gravity="left|center_vertical"
-                android:singleLine="true"
-                android:id="@+id/two"
                 android:hint="Date of collection"
-                android:layout_margin="10dp">
+                android:singleLine="true">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <Button
                 android:id="@+id/pickDateBtn"
                 android:layout_width="wrap_content"
@@ -56,12 +100,13 @@
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/three"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/three"
-            android:hint="Age"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:hint="Age">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -69,12 +114,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/four"
-            android:hint="Village"
-            android:layout_margin="10dp">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Village">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,12 +128,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/five"
-            android:hint="Religion"
-            android:layout_margin="10dp">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Religion">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,12 +142,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/six"
-            android:hint="Caste"
-            android:layout_margin="10dp">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Caste">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,12 +156,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/seven"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/seven"
-            android:hint="Mobile No."
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:hint="Mobile No.">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -121,12 +170,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/eight"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/eight"
-            android:hint="L-Para(1st Kid, 2nd Kid)"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:hint="L-Para(1st Kid, 2nd Kid)">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -136,24 +186,27 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
+
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nine"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:gravity="left|center_vertical"
-                android:singleLine="true"
-                android:id="@+id/nine"
                 android:hint="LMP(Last Menstruation Period)"
-                android:layout_margin="10dp">
+                android:singleLine="true">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <Button
                 android:id="@+id/pickDateBtn1"
                 android:layout_width="wrap_content"
@@ -166,24 +219,27 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
+
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ten"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:gravity="left|center_vertical"
-                android:singleLine="true"
-                android:id="@+id/ten"
                 android:hint="EDOD(Estimated Date Of Delivery)"
-                android:layout_margin="10dp">
+                android:singleLine="true">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <Button
                 android:id="@+id/pickDateBtn2"
                 android:layout_width="wrap_content"
@@ -196,24 +252,27 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
+
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/eleven"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:gravity="left|center_vertical"
-                android:singleLine="true"
-                android:id="@+id/eleven"
                 android:hint="Tetanus 1"
-                android:layout_margin="10dp">
+                android:singleLine="true">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <Button
                 android:id="@+id/pickDateBtn3"
                 android:layout_width="wrap_content"
@@ -225,24 +284,27 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
+
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/twelve"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:gravity="left|center_vertical"
-                android:singleLine="true"
-                android:id="@+id/twelve"
                 android:hint="Tetanus 2"
-                android:layout_margin="10dp">
+                android:singleLine="true">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <Button
                 android:id="@+id/pickDateBtn4"
                 android:layout_width="wrap_content"
@@ -252,12 +314,13 @@
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/thirteen"
-            android:hint="ANC"
-            android:layout_margin="10dp">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="ANC">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -265,12 +328,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/fourteen"
-            android:hint="Heartbeat"
-            android:layout_margin="10dp">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Heartbeat">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -278,12 +342,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fifteen"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/fifteen"
-            android:hint="Blood Pressure"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:hint="Blood Pressure">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -294,10 +359,9 @@
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save Data"
-            android:textSize="24sp"
             android:layout_margin="10dp"
-            />
+            android:text="Save Data"
+            android:textSize="24sp" />
 
     </LinearLayout>
 
