@@ -2,11 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.maternalmortality">
 
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
@@ -16,6 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaternalMortality">
+        <activity android:name=".AnmProfile"></activity>
+        <activity android:name=".ProfileAsha" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -27,11 +31,10 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-
-        <activity android:name=".ViewDoctorRecordActivity"></activity>
+        <activity android:name=".ViewDoctorRecordActivity" />
         <activity android:name=".ViewAssignedActivity" />
         <activity android:name=".AshaActivity" />
-        <activity android:name=".InfoCard"></activity>
+        <activity android:name=".InfoCard" />
         <activity android:name=".AshaPatients" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".DataForDoctor" />

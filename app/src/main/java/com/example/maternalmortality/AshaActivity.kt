@@ -31,7 +31,7 @@ class AshaActivity : AppCompatActivity() {
         val signOutButton: CardView = findViewById(R.id.button)
 
 
-
+        val profile : CardView = findViewById(R.id.button_profile)
         val viewAssigned: CardView = findViewById(R.id.button4)
 
 
@@ -40,7 +40,10 @@ class AshaActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
+        profile.setOnClickListener {
+            val intent = Intent(this,ProfileAsha::class.java)
+            startActivity(intent)
+        }
 
         val firebase = FirebaseAuth.getInstance()
 
