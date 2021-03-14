@@ -2,21 +2,20 @@ package com.example.maternalmortality
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatDrawableManager.get
 import androidx.appcompat.widget.ResourceManagerInternal.get
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -30,15 +29,16 @@ import java.util.*
 
 
 class ProfileAsha : AppCompatActivity() {
-    private lateinit var authh : FirebaseAuth
     var profileImageUrlText = ""
     var selectedPhotoUri: Uri ?= null
     var uuuid = ""
+    private lateinit var authh : FirebaseAuth
     lateinit var profileimage : ImageView
     var  storageref : StorageReference ?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_asha)
+        authh = FirebaseAuth.getInstance()
         profileimage = findViewById<ImageView>(R.id.person_image);
         val fireStore = FirebaseFirestore.getInstance()
         val auth = FirebaseAuth.getInstance()
@@ -52,7 +52,7 @@ class ProfileAsha : AppCompatActivity() {
         }
         var profileref = storageref!!.child("AshaPics/"+user_email)
         profileref.downloadUrl.addOnSuccessListener {
-            uri ->  Picasso.with(this).load(uri).into(person_image)
+                uri ->  Picasso.with(this).load(uri).into(person_image)
         }
         var name = findViewById<TextView>(R.id.person_name);
         var email = findViewById<TextView>(R.id.person_email);
@@ -81,6 +81,7 @@ class ProfileAsha : AppCompatActivity() {
             val opengallery = Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(opengallery,1000);
         }
+
         changepassword.setOnClickListener{
             val mDialogView = LayoutInflater.from(this).inflate(R.layout.change_password_layout,null);
             val mBuilder = AlertDialog.Builder(this)
@@ -115,6 +116,7 @@ class ProfileAsha : AppCompatActivity() {
                                                     authh.signOut()
                                                     val intent = Intent(this,AshaActivity::class.java)
                                                     startActivity(intent)
+                                                    finish()
                                                 }
                                             }
 
@@ -127,6 +129,7 @@ class ProfileAsha : AppCompatActivity() {
                         else{
                             val intent = Intent(this,AshaActivity::class.java)
                             startActivity(intent)
+                            finish()
                         }
                     }
                 }
@@ -136,22 +139,21 @@ class ProfileAsha : AppCompatActivity() {
 
             }
         }
-
     }
-   override fun onActivityResult(requestCode : Int ,resultCode : Int,data:Intent?){
-       super.onActivityResult(requestCode,resultCode,data);
-       if(requestCode==1000) {
-           if (resultCode == Activity.RESULT_OK&&data!=NULL) {
-               selectedPhotoUri = data?.data
-               val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedPhotoUri)
+    override fun onActivityResult(requestCode : Int ,resultCode : Int,data:Intent?){
+        super.onActivityResult(requestCode,resultCode,data);
+        if(requestCode==1000) {
+            if (resultCode == Activity.RESULT_OK&&data!=NULL) {
+                selectedPhotoUri = data?.data
+                val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedPhotoUri)
 
-               person_image.setImageBitmap(bitmap)
+                person_image.setImageBitmap(bitmap)
 
-               uploadImageToFirebase(uuuid);
+                uploadImageToFirebase(uuuid);
 //               Log.d("chut","$uuuid");
-           }
-       }
-   }
+            }
+        }
+    }
     private fun uploadImageToFirebase(filename : String) {
         if (selectedPhotoUri == null) return
 
