@@ -116,6 +116,7 @@ class AnmProfile : AppCompatActivity() {
                                                     authh.signOut()
                                                     val intent = Intent(this,MainActivity::class.java)
                                                     startActivity(intent)
+                                                    finish()
                                                 }
                                             }
 
@@ -128,6 +129,7 @@ class AnmProfile : AppCompatActivity() {
                         else{
                             val intent = Intent(this,MainActivity::class.java)
                             startActivity(intent)
+                            finish()
                         }
                     }
                 }
