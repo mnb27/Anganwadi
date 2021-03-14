@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         val auth = FirebaseAuth.getInstance()
 
 
-
+        val profile : CardView = findViewById(R.id.button_profile)
         val signOutButton: CardView = findViewById(R.id.button)
 
         val collectData: CardView = findViewById(R.id.button3)
@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        profile.setOnClickListener {
+            val intent = Intent(this,AnmProfile::class.java)
+            startActivity(intent)
+        }
 
 
         collectData.setOnClickListener {
