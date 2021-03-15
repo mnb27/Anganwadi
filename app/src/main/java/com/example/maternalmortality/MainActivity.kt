@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         val collectData: CardView = findViewById(R.id.button3)
 
         val viewAssigned: CardView = findViewById(R.id.button6)
+        val search: CardView = findViewById(R.id.search)
 
         viewAssigned.setOnClickListener{
             val intent = Intent(this, ViewAssignedActivity::class.java)
@@ -45,6 +46,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        search.setOnClickListener {
+            val intent = Intent(this, SearchPatientActivity::class.java)
+            startActivity(intent)
+        }
 
         collectData.setOnClickListener {
             val intent = Intent(this, CollectDataActivity::class.java)

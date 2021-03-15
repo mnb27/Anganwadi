@@ -72,6 +72,35 @@
 
 
             <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:id="@+id/search"
+                android:layout_height="170dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/purple_200"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="18dp"
+                        android:src="@drawable/person_search" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Search"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="20dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
                 android:id="@+id/button6"
                 android:layout_width="170dp"
                 android:layout_height="170dp"

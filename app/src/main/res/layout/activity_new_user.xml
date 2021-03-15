@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/one"
-            android:hint="Name of worker"
+            android:hint="@string/worker_name"
             android:layout_margin="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/two"
-            android:hint="Email"
+            android:hint="@string/mail"
             android:layout_margin="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/four"
-            android:hint="Center Code"
+            android:hint="@string/code"
             android:layout_margin="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -106,7 +106,7 @@
                 android:gravity="left|center_vertical"
                 android:singleLine="true"
                 android:id="@+id/six"
-                android:hint="Date of birth"
+                android:hint="@string/dob"
                 android:layout_margin="10dp">
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -125,7 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/seven"
-            android:hint="Village"
+            android:hint="@string/village"
             android:layout_margin="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -149,7 +149,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/nine"
-            android:hint="Mobile No."
+            android:hint="@string/mobile"
             android:layout_margin="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"

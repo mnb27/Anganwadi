@@ -60,10 +60,23 @@ class NewUserActivity : AppCompatActivity() {
         val auth = FirebaseAuth.getInstance()
 
         saveButton.setOnClickListener {
-            var name = name.editText?.text.toString()
-            var email = email.editText?.text.toString()
-            var center_name = center_name.editText?.text.toString()
-            var center_code = center_code.editText?.text.toString()
+            var nameText = name.editText?.text.toString()
+            var emailText = email.editText?.text.toString()
+            var center_name_Text = center_name.editText?.text.toString()
+            var center_code_Text = center_code.editText?.text.toString()
+
+            if (nameText.isEmpty()) {
+                name.setError("Required Field")
+                return@setOnClickListener
+            }
+            if (emailText.isEmpty()) {
+                email.setError("Required Field")
+                return@setOnClickListener
+            }
+            if (center_code_Text.isEmpty()) {
+                center_code.setError("Required Field")
+                return@setOnClickListener
+            }
 
             // radio button
             var category:String
@@ -74,19 +87,33 @@ class NewUserActivity : AppCompatActivity() {
             if(male.isChecked) gender="male"
             else gender="female"
 
-            var dob = dob.editText?.text.toString()
-            var village = village.editText?.text.toString()
-            var state = state.editText?.text.toString()
-            var mobile = mobile.editText?.text.toString()
+            var dob_text = dob.editText?.text.toString()
+            var village_text = village.editText?.text.toString()
+            var state_text = state.editText?.text.toString()
+            var mobile_text = mobile.editText?.text.toString()
             var status = "pending"
-            val New_user = New_Registration(name,email,center_name,center_code,category,gender,dob,village,state,mobile,status)
+
+            if (dob_text.isEmpty()) {
+                dob.setError("Required Field")
+                return@setOnClickListener
+            }
+            if (village_text.isEmpty()) {
+                village.setError("Required Field")
+                return@setOnClickListener
+            }
+            if (mobile_text.isEmpty()) {
+                mobile.setError("Required Field")
+                return@setOnClickListener
+            }
+
+            val New_user = New_Registration(nameText,emailText,center_name_Text,center_code_Text,category,gender,dob_text,village_text,state_text,mobile_text,status)
             val firestore = FirebaseFirestore.getInstance().collection("New_Registration")
 
-            firestore.document(mobile).set(New_user)
+            firestore.document(mobile_text).set(New_user)
                     .addOnCompleteListener { task->
                         if(task.isSuccessful){
                             Toast.makeText(this, "Successfully Applied",Toast.LENGTH_LONG).show()
-                            val intent = Intent(this,AdminActivity::class.java)
+                            val intent = Intent(this,Dashboard::class.java)
                             startActivity(intent)
                             finish()
                         }

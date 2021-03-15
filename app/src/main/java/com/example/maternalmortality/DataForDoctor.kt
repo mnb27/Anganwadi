@@ -3,6 +3,7 @@ package com.example.maternalmortality
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -197,6 +198,11 @@ class DataForDoctor : AppCompatActivity() {
 
                         saveButton.setOnClickListener {
                             var feverText = fever.editText?.text.toString()
+
+                            if (feverText.isEmpty()) {
+                                fever.setError("Required Field")
+                                return@setOnClickListener
+                            }
 
                             var headacheText = "NO"
                             if(clickHeadache==false) headacheText="YES"

@@ -248,6 +248,28 @@ class CollectDataActivity : AppCompatActivity() {
             var heartbeatText = heartbeat.editText?.text.toString()
             var bpText = bp.editText?.text.toString()
 
+
+            if (nameText.isEmpty()) {
+                name.setError("Required Field")
+                return@setOnClickListener
+            }
+            if (ageText.isEmpty()) {
+                age.setError("Required Field")
+                return@setOnClickListener
+            }
+            if (villageText.isEmpty()) {
+                village.setError("Required Field")
+                return@setOnClickListener
+            }
+            if (phoneText.isEmpty()) {
+                phone.setError("Required Field")
+                return@setOnClickListener
+            }
+            if (dateText.isEmpty()) {
+                date.setError("Required Field")
+                return@setOnClickListener
+            }
+
             Log.d("TAG", "File url 2: $profileImageUrlText")
 
             var anm_supervisor_email = ""

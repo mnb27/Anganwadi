@@ -55,6 +55,7 @@ class ProfileAsha : AppCompatActivity() {
                 uri ->  Picasso.with(this).load(uri).into(person_image)
         }
         var name = findViewById<TextView>(R.id.person_name);
+        var name1 = findViewById<TextView>(R.id.person_name1);
         var email = findViewById<TextView>(R.id.person_email);
         var mobile = findViewById<TextView>(R.id.person_mobile);
         var address = findViewById<TextView>(R.id.person_address);
@@ -63,9 +64,10 @@ class ProfileAsha : AppCompatActivity() {
             .addOnCompleteListener(){
                 if(it.isSuccessful){
                     for(document in it.result!!){
-                        name.setText("Name : "+document.data.getValue("name"));
-                        mobile.setText("Mobile Number : "+document.data.getValue("mobile"));
-                        address.setText("Village : "+document.data.getValue("village"));
+                        name.setText(""+document.data.getValue("name"));
+                        name1.setText("@"+document.data.getValue("name"));
+                        mobile.setText("+91 "+document.data.getValue("mobile"));
+                        address.setText(""+document.data.getValue("village"));
                     }
                 }
             }
@@ -86,13 +88,13 @@ class ProfileAsha : AppCompatActivity() {
             val mDialogView = LayoutInflater.from(this).inflate(R.layout.change_password_layout,null);
             val mBuilder = AlertDialog.Builder(this)
                 .setView(mDialogView)
-                .setTitle("Change Password")
+//                .setTitle("Change Password")
             val mAlertDialog = mBuilder.show()
             mDialogView.save_button.setOnClickListener {
                 mAlertDialog.dismiss()
-                val ps1 = mDialogView.new_pswd.text.toString()
-                val ps2 = mDialogView.reenter_new_pswd.text.toString()
-                if(mDialogView.new_pswd.text.isNotEmpty()&&mDialogView.reenter_new_pswd.text.isNotEmpty()&&mDialogView.current_pswd.text.isNotEmpty()){
+                val ps1 = mDialogView.new_pswd.editText?.text.toString()
+                val ps2 = mDialogView.reenter_new_pswd.editText?.text.toString()
+                if(mDialogView.new_pswd.editText?.text.toString().isNotEmpty()&&mDialogView.reenter_new_pswd.editText?.text.toString().isNotEmpty()&&mDialogView.current_pswd.editText?.text.toString().isNotEmpty()){
                     if(ps1!=ps2){
                         Toast.makeText(this,"Enter same password in both fields",Toast.LENGTH_LONG).show()
                     }
@@ -100,7 +102,7 @@ class ProfileAsha : AppCompatActivity() {
                         val userr = authh.currentUser!!
                         if(userr!=null&&userr.email!=null){
                             val credential = EmailAuthProvider
-                                .getCredential(userr.email!!, mDialogView.current_pswd.text.toString())
+                                .getCredential(userr.email!!, mDialogView.current_pswd.editText?.text.toString())
 
                             userr.reauthenticate(credential)
                                 .addOnCompleteListener {

@@ -31,6 +31,12 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
+        <activity android:name=".SearchPatientActivity" />
+        <activity android:name=".ViewANMUserActivity" />
+        <activity android:name=".ViewAshaUserActivity" />
+        <activity android:name=".ViewSearchedPatient" />
+
+
         <activity android:name=".ViewDoctorRecordActivity" />
         <activity android:name=".ViewAssignedActivity" />
         <activity android:name=".AshaActivity" />

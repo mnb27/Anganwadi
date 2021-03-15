@@ -18,6 +18,9 @@ class AdminActivity : AppCompatActivity() {
         val anmrequest: CardView = findViewById(R.id.button2)
         val asharequest: CardView = findViewById(R.id.button3)
 
+        val viewANM: CardView = findViewById(R.id.viewANM)
+        val viewAsha: CardView = findViewById(R.id.viewAsha)
+
 
         if (FirebaseAuth.getInstance().currentUser == null) {
             startActivity(Intent(this, AuthenticationActivity::class.java))
@@ -34,6 +37,16 @@ class AdminActivity : AppCompatActivity() {
         }
         feedback.setOnClickListener {
             val intent = Intent(this, FeedbackActivity::class.java)
+            startActivity(intent)
+        }
+
+        viewANM.setOnClickListener {
+            val intent = Intent(this,ViewANMUserActivity::class.java)
+            startActivity(intent)
+        }
+
+        viewAsha.setOnClickListener {
+            val intent = Intent(this,ViewAshaUserActivity::class.java)
             startActivity(intent)
         }
 

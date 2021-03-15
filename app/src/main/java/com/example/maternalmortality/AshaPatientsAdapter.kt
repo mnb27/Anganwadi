@@ -55,7 +55,8 @@ class AshaPatientsAdapter(var context: Context, var detailsList: MutableList<Pat
             Picasso.with(context).load(url).into(holder.profileImage)
         }
         else {
-            val urll = "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"
+//            val urll = "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"
+            val urll = "https://www.kindpng.com/picc/m/164-1648741_mom-icon-png-customer-icon-transparent-png-png.png"
             Picasso.with(context).load(urll).into(holder.profileImage);
         }
 
