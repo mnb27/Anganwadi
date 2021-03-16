@@ -78,11 +78,13 @@ class ViewSearchedPatient : AppCompatActivity() {
             val auth = FirebaseAuth.getInstance()
 
             fireStore.collection("PatientDetails")
-                .whereEqualTo("name", name).whereEqualTo("village",village)
                 .get()
                 .addOnSuccessListener { documents ->
                     for (document in documents) {
-                        list.add(document.toObject(PatientDetails::class.java))
+                        var patDetails = document.toObject(PatientDetails::class.java)
+                        if(patDetails.name.toLowerCase() == name && patDetails.village.toLowerCase() == village){
+                            list.add(patDetails)
+                        }
                     }
                     (recyclerView.adapter as ViewSearchedPatientAdapter).notifyDataSetChanged()
                 }

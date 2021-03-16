@@ -4,169 +4,245 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFFFF"
+    android:background="#FFFFFF"
     tools:context=".DataForDoctor">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/one"
-            android:hint="Fever (°C)"
-            android:layout_margin="10dp">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/fever">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/two"
-            android:hint="Headache (Y/N)"
-            android:layout_margin="10dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:orientation="horizontal"
+            android:layout_weight="2">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/three"
-            android:hint="Blurring vision (Y/N)"
-            android:layout_margin="10dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/two"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_button_blue"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:text="Headache"
+                android:layout_weight="1"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:backgroundTint="@null"
+                android:layout_width="wrap_content" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/four"
-            android:hint="Swelling (Y/N)"
-            android:layout_margin="10dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/three"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_button_blue"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:text="Blurring Vision"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:backgroundTint="@null"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/five"
-            android:hint="Puffed Face (Y/N)"
-            android:layout_margin="10dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/six"
-            android:hint="Palpitations (Y/N)"
-            android:layout_margin="10dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:orientation="horizontal"
+            android:layout_weight="2">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/seven"
-            android:hint="Fatigability (Y/N)"
-            android:layout_margin="10dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/four"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_button_blue"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:text="Swelling"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:backgroundTint="@null"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/eight"
-            android:hint="Breathlessness at rest (Y/N)"
-            android:layout_margin="10dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/five"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_button_blue"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:text="Puffed Face"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:backgroundTint="@null"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/nine"
-            android:hint="Pain in abdomen (Y/N)"
-            android:layout_margin="10dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/ten"
-            android:hint="Vaginal Bleeding (Y/N)"
-            android:layout_margin="10dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:orientation="horizontal"
+            android:layout_weight="2">
+            <Button
+                android:id="@+id/six"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_button_blue"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:text="Palpitations"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:backgroundTint="@null"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/eleven"
-            android:hint="Water Discharge (Y/N)"
-            android:layout_margin="10dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/seven"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_button_blue"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:text="Fatigability"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:backgroundTint="@null"/>
+        </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/twelve"
-            android:hint="Reduced Fatal Movements"
-            android:layout_margin="10dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/eight"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_button_blue"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:text="Breathlessness at rest"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:backgroundTint="@null"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2">
+            <Button
+                android:id="@+id/nine"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_button_blue"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:text="Pain in abdomen"
+                android:layout_weight="1"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:backgroundTint="@null"/>
+
+            <Button
+                android:id="@+id/ten"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_button_blue"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:text="Vaginal Bleeding"
+                android:layout_weight="1"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:backgroundTint="@null"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/twelve"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_button_blue"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:text="Reduced Fatal Movements"
+                android:layout_weight="1"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:backgroundTint="@null"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2">
+
+            <Button
+                android:id="@+id/eleven"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_button_blue"
+                android:ellipsize="end"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text="Water Discharge"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:backgroundTint="@null"/>
+
+        </LinearLayout>
 
 
 
