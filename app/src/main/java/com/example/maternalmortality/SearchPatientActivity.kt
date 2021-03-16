@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import com.example.maternalmortality.models.PatientDetails
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
@@ -23,12 +24,15 @@ class SearchPatientActivity : AppCompatActivity() {
 
         var c= 0
         searchButton.setOnClickListener {
-            val nameText = name.editText?.text.toString()
-            val villageText = village.editText?.text.toString()
-            firestore.collection("PatientDetails").whereEqualTo("name",nameText).whereEqualTo("village",villageText).get()
+            val nameText = name.editText?.text.toString().toLowerCase()
+            val villageText = village.editText?.text.toString().toLowerCase()
+            firestore.collection("PatientDetails").get()
                 .addOnSuccessListener {documents->
                     for(document in documents){
-                        c = 1
+                        var patDetails = document.toObject(PatientDetails::class.java)
+                        if(patDetails.name.toLowerCase() == nameText && patDetails.village.toLowerCase() == villageText){
+                            c=1
+                        }
                     }
 
                     if(c==0){
