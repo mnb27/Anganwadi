@@ -36,7 +36,7 @@ class SearchPatientActivity : AppCompatActivity() {
                     }
 
                     if(c==0){
-                        Toast.makeText(this,nameText + villageText,Toast.LENGTH_LONG).show()
+                        Toast.makeText(this,"Patient Not Found",Toast.LENGTH_LONG).show()
                     }
 
                     else{

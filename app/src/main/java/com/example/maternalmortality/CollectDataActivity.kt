@@ -31,6 +31,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_collect_data.*
 import kotlinx.coroutines.*
 import org.jetbrains.anko.Android
@@ -65,10 +66,14 @@ class CollectDataActivity : AppCompatActivity() {
 
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedPhotoUri)
 
-            selectphoto_imageview_register.setImageBitmap(bitmap)
+//            selectphoto_imageview_register.setImageBitmap(bitmap)
+
+            if(selectedPhotoUri!=null){
+                Picasso.with(this).load(selectedPhotoUri).fit().centerInside().rotate(90F).into(selectphoto_imageview_register);
+            }
 
 //            selectphoto_button_register.alpha = 0f
-            selectphoto_imageview_register.setBackgroundColor(Color.parseColor("#ffffff"))
+//            selectphoto_imageview_register.setBackgroundColor(Color.parseColor("#ffffff"))
 
 //      val bitmapDrawable = BitmapDrawable(bitmap)
 //      selectphoto_button_register.setBackgroundDrawable(bitmapDrawable)
@@ -76,7 +81,10 @@ class CollectDataActivity : AppCompatActivity() {
 
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
             val myBitmap = BitmapFactory.decodeFile(photoFile!!.getAbsolutePath())
-            selectphoto_imageview_register.setImageBitmap(myBitmap)
+//            selectphoto_imageview_register.setImageBitmap(myBitmap)
+            if(selectedPhotoUri!=null){
+                Picasso.with(this).load(selectedPhotoUri).fit().centerInside().rotate(90F).into(selectphoto_imageview_register);
+            }
             selectphoto_imageview_register.setBackgroundColor(Color.parseColor("#ffffff"))
         } else {
             displayMessage(baseContext, "Request cancelled or something went wrong.")
